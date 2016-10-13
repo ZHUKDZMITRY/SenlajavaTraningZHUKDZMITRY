@@ -1,8 +1,7 @@
 public class Run {
 
 	public static void main(String[] args) {
-		LibraryService libraryService = new LibraryService(new Library(100, 100));
-		libraryService.initLibrary();
+		LibraryService libraryService = new LibraryService();
 		
 		// a) Add books
 		libraryService.addBook("Book 1");

@@ -1,26 +1,15 @@
 
 public class LibraryService {
 
-	private int maxBooksCount = 100;
-	private int maxReadersCount = 100;
+	private final static int BOOK_SIZE = 100;
+	private final static int READERS_SIZE = 100;
 	
 	private Library library;
 	
-	public LibraryService(Library library) {
+	public LibraryService() {
+		this.library = new Library(READERS_SIZE, BOOK_SIZE);
 	}
 	
-	public void setMaxBooksCount(int maxBooksCount) {
-		this.maxBooksCount = maxBooksCount;
-	}
-
-	public void setMaxReadersCount(int maxReadersCount) {
-		this.maxReadersCount = maxReadersCount;
-	}
-
-	public void initLibrary() {
-		this.library = new Library(maxReadersCount, maxBooksCount);
-	}
-
 	public void addBook(String bookName) {
 		for (int i = 0; i < library.getBooks().length; i++) {
 			if (library.getBooks()[i] == null) {
